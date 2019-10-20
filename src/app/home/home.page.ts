@@ -1,12 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { DatalistingService } from '../datalisting.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  styleUrls: ['home.page.scss']
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  constructor(private datalistingService: DatalistingService) {}
+  loading = false;
+  quotes = [];
 
-  constructor() {}
+  ngOnInit() {
+    this.getAll();
+  }
 
+  getAll() {
+    this.loading = true;
+
+    console.log('get');
+    this.datalistingService.getQuotes().subscribe(
+      data => {
+        this.loading = false;
+        this.quotes = data.data;
+        console.log('data', data);
+      },
+      error => {
+        this.loading = false;
+
+        console.log('error', error);
+      }
+    );
+  }
 }

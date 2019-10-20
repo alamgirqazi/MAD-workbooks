@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  }
+  },  { path: 'github', loadChildren: './github/github.module#GithubPageModule' }
+
 ];
 
 @NgModule({

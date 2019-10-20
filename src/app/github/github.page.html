@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>github</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="ion-padding-top">
+    <ion-label position="floating">Search by Github Name</ion-label>
+    <ion-input [(ngModel)]="githubname" (ngModelChange)="valueChange($event)"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="search()" class="ion-margin-top"> Search</ion-button>
+  <ion-progress-bar type="indeterminate" *ngIf="loading"></ion-progress-bar>
+  <!-- <ion-spinner *ngIf="loading" name="bubbles"></ion-spinner> -->
+
+  <ion-card class="welcome-card ion-padding" *ngFor="let repo of repos">
+    <ion-card-header>
+      <ion-card-title>{{repo?.url}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h4>
+        <ion-icon name="star"> </ion-icon> {{repo.stargazers_count}}
+      </h4>
+      <p>{{repo?.description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-card *ngIf="loading">
+
+    <div class="ion-padding custom-skeleton">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+
+
+
+  </ion-card> -->
+</ion-content>
