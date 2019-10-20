@@ -25,7 +25,8 @@ const routes: Routes = [
         loadChildren: './student/student.module#StudentPageModule'
       }
     ]
-  }
+  },  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' }
+
 ];
 
 @NgModule({
