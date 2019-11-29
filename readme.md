@@ -1,1 +1,1 @@
-Source code for Lecture 13 <a href="https://github.com/alamgirqazi/mobile-application-development-course/blob/master/lecture%2013/Lecture%2013%20-%20Mobile%20Application%20Development.pdf"> Loading Asynchronous Data in Ionic </a>
+Source code for Lecture 7 <a href="https://github.com/alamgirqazi/mobile-application-development-course/blob/master/lecture%207/Lecture%207%20-%20Mobile%20Application%20Development.pdf"> Asynchronous / Synchronous Programming. Callbacks, Promises, Async Await, Observables. rxjs.  </a>
